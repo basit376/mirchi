@@ -1,30 +1,31 @@
+<?php
+ //creating Short Varaibles 
+ $rollqty = (int) $_POST['rollqty'];
+ $tikaqty = (int) $_POST['tikaqty'];
+ $handiqty = (int) $_POST['handiqty'];
+ $pastaqty =(int) $_POST['pastaqty'];
+ $coffeqty = (int) $_POST['coffeqty'];
+ $address = preg_replace('/\t|\R/',' ',$_POST['address']);
+ date_default_timezone_set("Asia/Karachi");
+ $date = date('h:i:s, d-m-y');
+ $document_root = $_SERVER['DOCUMENT_ROOT'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <title>Mirchi 99 Orders=Results</title>
 </head>
 <body>
     <h1>Mirchi 99 Matiari Fast Food </h1>
     <h2>Order Results</h2>
     <?php
-     echo "<p>Order processed at ".date('H:i, jS F Y')."</p>";
-     //creating Short Varaibles 
-     $rollqty = (int) $_POST['rollqty'];
-     $tikaqty = (int) $_POST['tikaqty'];
-     $handiqty = (int) $_POST['handiqty'];
-     $pastaqty =(int) $_POST['pastaqty'];
-     $coffeqty = (int) $_POST['coffeqty'];
-     $address = preg_replace('/\t|\R/',' ',$_POST['address']);
-     $date = date('H:i, jS F Y');
-     $document_root = $_SERVER['DOCUMENT_ROOT'];
+     echo "<p>Order processed at ".date('h:i:s, d-m-y')."</p>";
     
-
      echo '<p>Your Orders Follows As:</p>';
      
-
      $totalqty = 0;
      $totalamount = 0.00;
      define('ROLLPRICE', 100);
